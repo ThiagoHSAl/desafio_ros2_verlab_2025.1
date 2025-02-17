@@ -1,0 +1,13 @@
+# Ignorar diretórios de compilação do ROS 2
+build/
+install/
+log/
+
+# Ignorar arquivos temporários do sistema
+*.swp
+*.swo
+.DS_Store
+
+# Ignorar arquivos de cache e logs
+*.pyc
+__pycache__/

@@ -302,18 +302,17 @@
       </geometry>
     </collision>
 
-    <visual name='camera_link_visual'>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size=".03 .03 .03"/>
-      </geometry>
-    </visual>
+    <visual>
+        <origin xyz="0 0 0" rpy="${M_PI/2} 0.0 ${M_PI/2}"/>
+        <geometry>
+          <mesh filename="package://scout_description/meshes/d435.stl" />
+        </geometry>
+        <material name="aluminum">
+          <color rgba="0.8 0.8 0.8 1"/>
+        </material>
+      </visual>
 
   </link>
-
-  <gazebo reference="camera_link">
-    <material>Gazebo/Red</material>
-  </gazebo>
 
   <joint type="fixed" name="camera_optical_joint">
     <origin xyz="0 0 0" rpy="-1.5707 0 -1.5707"/>
