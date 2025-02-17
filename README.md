@@ -1,19 +1,19 @@
 ### Usage for the Scout Mini
 Building the package: 
 ```bash
-    colcon build
+colcon build
 ```
 Source the built packages:
 ```bash
-    . install/setup.bash
+. install/setup.bash
 ```
 Launch the simulation environment:
 ```bash
-    ros2 launch scout_gazebo_sim scout_mini_empty_world.launch.py
+ros2 launch scout_gazebo_sim scout_mini_empty_world.launch.py
 ```
 Launch the keyborad to move the robot:
 ```bash
-    ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap /cmd_vel:=/scout_mini/cmd_vel
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 ### Parameters of <i>scout_mini_empty_world.launch.py</i>:
 - <b>use_rviz</b>: if you want to launch rviz2 or not, default <i>true</i>.

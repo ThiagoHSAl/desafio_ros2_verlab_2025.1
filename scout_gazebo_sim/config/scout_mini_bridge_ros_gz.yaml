@@ -19,6 +19,13 @@
   gz_type_name: "gz.msgs.CameraInfo" 
   direction: "GZ_TO_ROS"          
 
+# Camera image
+- ros_topic_name: "scout_mini/rgb_cam/image"
+  gz_topic_name: "scout_mini/rgb_cam/image"         
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image" 
+  direction: "GZ_TO_ROS"    
+
 # Odom - diff drive
 - ros_topic_name: "scout_mini/odom"
   gz_topic_name: "odom"              
@@ -34,7 +41,7 @@
   direction: "GZ_TO_ROS"           
 
 # cmd_vel
-- ros_topic_name: "scout_mini/cmd_vel"
+- ros_topic_name: "cmd_vel"
   gz_topic_name: "cmd_vel"         
   ros_type_name: "geometry_msgs/msg/Twist"
   gz_type_name: "gz.msgs.Twist" 

@@ -254,7 +254,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /scout_mini/rgb_cam/image_raw
+        Value: /scout_mini/rgb_cam/image
       Value: true
   Enabled: true
   Global Options:
