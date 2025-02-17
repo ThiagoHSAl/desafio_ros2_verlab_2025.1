@@ -1,17 +1,5 @@
-### Usage for the Scout Mini (ROS2 Jazzy + Ubuntu 24.04 + Gazebo Harmonic)
-Building the package:
-```bash
-    mkdir src
-```
-```bash
-    cd src
-```
-```bash
-    git clone https://github.com/ThiagoHSAl/desafio_ros2_verlab_2025.1.git
-``` 
-```bash
-    cd ..
-```
+### Usage for the Scout Mini
+Building the package: 
 ```bash
     colcon build
 ```
