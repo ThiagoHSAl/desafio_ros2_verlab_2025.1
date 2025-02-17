@@ -1,4 +1,4 @@
-### Usage for the Scout Mini (ROS2 Jazzy + Ubuntu 24.04 + Gzebo Harmonic)
+### Usage for the Scout Mini (ROS2 Jazzy + Ubuntu 24.04 + Gazebo Harmonic)
 Building the package: 
 ```bash
 colcon build
