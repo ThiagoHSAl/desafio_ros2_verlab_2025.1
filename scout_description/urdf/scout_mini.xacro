@@ -180,7 +180,7 @@
         min_range:='0.20'
         max_range:='30.0'
         range_resolution:='0.013'
-        topic_name:='scan'
+        topic_name:='scout_mini/scan'
         always_on:=true
         visualize:=false
         enable_collision:=false">
@@ -274,7 +274,7 @@
     rpy_offset="0 0 3.14"
     mesh_xyz_offset="0 0 0"
     mesh_rpy_offset="${-M_PI/2} 0 0"
-    topic_name="scan"/>
+    topic_name="scout_mini/scan"/>
 
 <!-- Scout gazebo plugin -->
     <gazebo>
