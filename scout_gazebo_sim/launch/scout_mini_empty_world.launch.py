@@ -64,9 +64,9 @@ def generate_launch_description():
     )
 
     # To support pre-garden. Deprecated.
-    os.environ["IGN_GAZEBO_SYSTEM_PLUGIN_PATH"] = ":".join(
+    os.environ["GZ_SIM_SYSTEM_PLUGIN_PATH"] = ":".join(
         [
-            os.environ.get("IGN_GAZEBO_SYSTEM_PLUGIN_PATH", default=""),
+            os.environ.get("GZ_SIM_SYSTEM_PLUGIN_PATH", default=""),
             os.environ.get("LD_LIBRARY_PATH", default=""),
         ]
     )
