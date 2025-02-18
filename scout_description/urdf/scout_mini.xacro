@@ -150,7 +150,8 @@
         <child link="rear_left_wheel_link" />
         <axis xyz="0 0 1" rpy="0 0 0" />
     </joint>
-<!-- Lidar Sensor -->
+
+    <!-- Lidar Sensor -->
     <xacro:property name="M_PI" value="3.1415926535897931" />
     <xacro:macro name="lidar_sensor" params="
         prefix:=''
@@ -223,45 +224,45 @@
         </link>
 
         <joint name="${prefix}${frame_id}_joint" type="fixed">
-        <parent link="${prefix}${parent}"/>
-        <child link="${prefix}${frame_id}" />
-        <origin xyz="${xyz_offset}" rpy="${rpy_offset}"/>
+            <parent link="${prefix}${parent}"/>
+            <child link="${prefix}${frame_id}" />
+            <origin xyz="${xyz_offset}" rpy="${rpy_offset}"/>
         </joint>
 
         <gazebo reference="${prefix}${frame_id}">
-        <material>
-            <ambient>${gazebo_material_ambient}</ambient>
-            <diffuse>${gazebo_material_diffuse}</diffuse>
-            <specular>${gazebo_material_specular}</specular>
-        </material>
-        <sensor name="${prefix}lidar_sensor" type="gpu_lidar">
-            <topic>${topic_name}</topic>
-            <update_rate>${update_rate}</update_rate>
-            <always_on>${always_on}</always_on>
-            <visualize>${visualize}</visualize>
-            <ray>
-            <scan>
-                <horizontal>
-                <samples>${ray_count}</samples>
-                <resolution>1</resolution>
-                <min_angle>${min_angle}</min_angle>
-                <max_angle>${max_angle}</max_angle>
-                </horizontal>
-                <vertical>
-                <samples>1</samples>
-                <resolution>1</resolution>
-                <min_angle>0</min_angle>
-                <max_angle>0</max_angle>
-                </vertical>
-            </scan>
-            <range>
-                <min>${min_range}</min>
-                <max>${max_range}</max>
-                <resolution>${range_resolution}</resolution>
-            </range>
-            </ray>
-            <gz_frame_id>${prefix}${frame_id}</gz_frame_id>
-        </sensor>
+            <material>
+                <ambient>${gazebo_material_ambient}</ambient>
+                <diffuse>${gazebo_material_diffuse}</diffuse>
+                <specular>${gazebo_material_specular}</specular>
+            </material>
+            <sensor name="${prefix}lidar_sensor" type="gpu_lidar">
+                <topic>${topic_name}</topic>
+                <update_rate>${update_rate}</update_rate>
+                <always_on>${always_on}</always_on>
+                <visualize>${visualize}</visualize>
+                <ray>
+                <scan>
+                    <horizontal>
+                    <samples>${ray_count}</samples>
+                    <resolution>1</resolution>
+                    <min_angle>${min_angle}</min_angle>
+                    <max_angle>${max_angle}</max_angle>
+                    </horizontal>
+                    <vertical>
+                    <samples>1</samples>
+                    <resolution>1</resolution>
+                    <min_angle>0</min_angle>
+                    <max_angle>0</max_angle>
+                    </vertical>
+                </scan>
+                <range>
+                    <min>${min_range}</min>
+                    <max>${max_range}</max>
+                    <resolution>${range_resolution}</resolution>
+                </range>
+                </ray>
+                <gz_frame_id>${prefix}${frame_id}</gz_frame_id>
+            </sensor>
         </gazebo>
     </xacro:macro>
 
@@ -276,84 +277,85 @@
     mesh_rpy_offset="${-M_PI/2} 0 0"
     topic_name="scout_mini/scan"/>
 
-      <!-- 7 - Camera -->
-  <joint type="fixed" name="camera_joint">
-    <origin xyz="0.225 0 0.075" rpy="0 0 0"/>
-    <child link="camera_link"/>
-    <parent link="base_link"/>
-    <axis xyz="0 1 0" />
-  </joint>
+    <!-- Camera -->
+    <joint type="fixed" name="camera_joint">
+        <origin xyz="0.225 0 0.075" rpy="0 0 0"/>
+        <child link="camera_link"/>
+        <parent link="base_link"/>
+        <axis xyz="0 1 0" />
+    </joint>
 
-  <link name='camera_link'>
-    <pose>0 0 0 0 0 0</pose>
-    <inertial>
-      <mass value="0.1"/>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia
-          ixx="1e-6" ixy="0" ixz="0"
-          iyy="1e-6" iyz="0"
-          izz="1e-6" />
-    </inertial>
+    <link name='camera_link'>
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+        <mass value="0.1"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia
+            ixx="1e-6" ixy="0" ixz="0"
+            iyy="1e-6" iyz="0"
+            izz="1e-6" />
+        </inertial>
 
-    <collision name='collision'>
-      <origin xyz="0 0 0" rpy="0 0 0"/> 
-      <geometry>
-        <box size=".03 .03 .03"/>
-      </geometry>
-    </collision>
+        <collision name='collision'>
+            <origin xyz="0 0 0" rpy="0 0 0"/> 
+            <geometry>
+                <box size=".03 .03 .03"/>
+            </geometry>
+        </collision>
 
-    <visual>
-        <origin xyz="0 0 0" rpy="${M_PI/2} 0.0 ${M_PI/2}"/>
-        <geometry>
-          <mesh filename="package://scout_description/meshes/d435.stl" />
-        </geometry>
-        <material name="aluminum">
-          <color rgba="0.8 0.8 0.8 1"/>
-        </material>
-      </visual>
+        <visual>
+            <origin xyz="0 0 0" rpy="${M_PI/2} 0.0 ${M_PI/2}"/>
+            <geometry>
+                <mesh filename="package://scout_description/meshes/d435.stl"/>
+            </geometry>
+            <material name="aluminum">
+            <color rgba="0.8 0.8 0.8 1"/>
+            </material>
+        </visual>
 
-  </link>
+    </link>
 
-  <joint type="fixed" name="camera_optical_joint">
-    <origin xyz="0 0 0" rpy="-1.5707 0 -1.5707"/>
-    <child link="camera_link_optical"/>
-    <parent link="camera_link"/>
-  </joint>
+    <joint type="fixed" name="camera_optical_joint">
+        <origin xyz="0 0 0" rpy="-1.5707 0 -1.5707"/>
+        <child link="camera_link_optical"/>
+        <parent link="camera_link"/>
+    </joint>
 
-  <link name="camera_link_optical">
-  </link>
+    <link name="camera_link_optical">
+    </link>
     <!-- 7 - Camera Gazebo Plugin -->
-  <gazebo reference="camera_link">
-    <sensor name="camera" type="camera">
-      <camera>
-        <horizontal_fov>1.3962634</horizontal_fov>
-        <image>
-          <width>640</width>
-          <height>480</height>
-          <format>R8G8B8</format>
-        </image>
-        <clip>
-          <near>0.1</near>
-          <far>15</far>
-        </clip>
-        <noise>
-          <type>gaussian</type>
-          <!-- Noise is sampled independently per pixel on each frame.
-               That pixel's noise value is added to each of its color
-               channels, which at that point lie in the range [0,1]. -->
-          <mean>0.0</mean>
-          <stddev>0.007</stddev>
-        </noise>
-        <optical_frame_id>camera_link_optical</optical_frame_id>
-        <camera_info_topic>scout_mini/rgb_cam/camera_info</camera_info_topic>
-      </camera>
-      <always_on>1</always_on>
-      <update_rate>20</update_rate>
-      <visualize>true</visualize>
-      <topic>scout_mini/rgb_cam/image</topic>
-    </sensor>
-  </gazebo>
-<!-- Scout gazebo plugin -->
+    <gazebo reference="camera_link">
+        <sensor name="camera" type="camera">
+            <camera>
+                <horizontal_fov>1.3962634</horizontal_fov>
+                <image>
+                    <width>640</width>
+                    <height>480</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.1</near>
+                    <far>15</far>
+                </clip>
+                <noise>
+                    <type>gaussian</type>
+                    <!-- Noise is sampled independently per pixel on each frame.
+                        That pixel's noise value is added to each of its color
+                        channels, which at that point lie in the range [0,1]. -->
+                    <mean>0.0</mean>
+                    <stddev>0.007</stddev>
+                </noise>
+                <optical_frame_id>camera_link_optical</optical_frame_id>
+                <camera_info_topic>scout_mini/rgb_cam/camera_info</camera_info_topic>
+            </camera>
+            <always_on>1</always_on>
+            <update_rate>20</update_rate>
+            <visualize>true</visualize>
+            <topic>scout_mini/rgb_cam/image</topic>
+        </sensor>
+    </gazebo>
+    
+    <!-- Scout gazebo plugin -->
     <gazebo>
         <plugin filename="libgz-sim-joint-state-publisher-system.so"
             name="gz::sim::systems::JointStatePublisher">
