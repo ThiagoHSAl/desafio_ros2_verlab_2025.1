@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import os
 
 from ament_index_python.packages import get_package_prefix, get_package_share_directory
@@ -10,7 +8,6 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from nav2_common.launch import ReplaceString
-
 
 
 def generate_launch_description():
@@ -141,7 +138,6 @@ def generate_launch_description():
         arguments=['/scout_mini/rgb_cam/image'],
     )
 
-   
     ld = LaunchDescription()
 
     # Declare the launch options
@@ -157,6 +153,5 @@ def generate_launch_description():
     ld.add_action(ros_gz_bridge_image_node)
 
     ld.add_action(rviz_node)
-    
 
     return ld
