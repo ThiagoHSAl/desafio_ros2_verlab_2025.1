@@ -1,6 +1,7 @@
 This repository contains a simulation developed for the **Challenge for participation in the Mobile Robotics Research Project - VeRLab 2025.1** 🤖. The goal of the challenge was to create a ROS Gazebo simulation of the **Scout Mini**, a mobile robot from **AgileX**, equipped with either a **LiDAR sensor** or an **RGB camera** 📷.
 
-In this implementation, both sensors were added to the Scout Mini 🔧. Additionally, a room with walls and a table was created 🏠 to simulate the VeRLab and provide a better visualization of the sensors’ functionality in **RViz** 🔍.
+In this implementation, both sensors were added to the Scout Mini 🔧and both are configured to be connected and operating in Rivz after the simulation is launched
+. Additionally, a room with walls and a table was created 🏠 to simulate the VeRLab and provide a better visualization of the sensors’ functionality in **RViz** 🔍.
 
 To facilitate interaction with the simulation, the **teleop_twist_keyboard** was configured, allowing manual control of the robot 🎮.
 
@@ -134,10 +135,51 @@ Launch the simulation environment:
 ```bash
 ros2 launch scout_gazebo_sim scout_mini_empty_world.launch.py
 ```
-Launch the keyborad to move the robot:
+In another terminal launch the keyborad to move the robot:
 ```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
+### **teleop_twist_keyboard Explanation**
+
+The **teleop_twist_keyboard** node takes keyboard inputs and publishes them as **Twist** or **TwistStamped** messages, which are commonly used to control robot movement in ROS. This package works best with a **US keyboard layout**.
+
+#### **Moving Around**:
+- **u**: Move the robot diagonally up-left.
+- **i**: Move the robot forward (increase linear speed along the x-axis).
+- **o**: Move the robot diagonally up-right.
+- **j**: Move the robot left (decrease linear speed along the x-axis).
+- **k**: Stop the robot (no movement).
+- **l**: Move the robot right (increase linear speed along the x-axis).
+- **m**: Move the robot diagonally down-left.
+- **, (comma)**: Move the robot backward (decrease linear speed along the x-axis).
+- **. (period)**: Move the robot diagonally down-right.
+
+#### **Holonomic Mode (for strafing, sideways movement)**:
+Hold down the **Shift** key to enter **Holonomic mode**, which allows strafing (sideways movement):
+- **U**: Move the robot diagonally up-left.
+- **I**: Move the robot forward (increase linear speed along the x-axis).
+- **O**: Move the robot diagonally up-right.
+- **J**: Move the robot left (decrease linear speed along the x-axis).
+- **K**: Stop the robot (no movement).
+- **L**: Move the robot right (increase linear speed along the x-axis).
+- **M**: Move the robot diagonally down-left.
+- **< (less than)**: Move the robot backward (decrease linear speed along the x-axis).
+- **> (greater than)**: Move the robot diagonally down-right.
+
+#### **Additional Controls**:
+- **t**: Move the robot up (along the z-axis).
+- **b**: Move the robot down (along the z-axis).
+- **anything else**: Stop the robot immediately.
+- **q**: Increase the maximum speed of the robot by 10%.
+- **z**: Decrease the maximum speed of the robot by 10%.
+- **w**: Increase only the linear speed by 10%.
+- **x**: Decrease only the linear speed by 10%.
+- **e**: Increase only the angular speed by 10%.
+- **c**: Decrease only the angular speed by 10%.
+
+#### **Exiting the Program**:
+- **CTRL-C**: Quit the program.
+
 ### Parameters of <i>scout_mini_empty_world.launch.py</i>:
 - <b>use_rviz</b>: if you want to launch rviz2 or not, default <i>true</i>.
 - <b>rviz_config_file</b>: name of the configuration file for RVIz2, defautl <i>scout_mini.rviz</i>.
