@@ -1,4 +1,4 @@
-This repository contains a simulation developed for the **Challenge for participation in the Mobile Robotics Research Project - VeRLab 2025.1** 🤖. The goal of the challenge was to create a simulation of the **Scout Mini**, a mobile robot from **AgileX**, equipped with either a **LiDAR sensor** or an **RGB camera** 📷.
+This repository contains a simulation developed for the **Challenge for participation in the Mobile Robotics Research Project - VeRLab 2025.1** 🤖. The goal of the challenge was to create a ROS Gazebo simulation of the **Scout Mini**, a mobile robot from **AgileX**, equipped with either a **LiDAR sensor** or an **RGB camera** 📷.
 
 In this implementation, both sensors were added to the Scout Mini 🔧. Additionally, a room with walls and a table was created 🏠 to simulate the VeRLab and provide a better visualization of the sensors’ functionality in **RViz** 🔍.
 
@@ -84,31 +84,32 @@ sudo apt-get install gz-harmonic
 ### Aditional necessary packages
 To correctly build and run the simulation, you will need to install the following packages
 
-xacro
+xacro (used to process URDF files in ROS 2)
 ```bash
 sudo apt install ros-jazzy-xacro
 ```
-ros_gz_bridge 
+ros_gz_bridge (bridges the gap between ROS 2 and Gazebo)
 ```bash
 sudo apt install ros-jazzy-ros-gz-bridge
 ```
-ros_gz_image 
+ros_gz_image (integrate image communication between ROS 2 and the Gazebo simulator via the ros_gz_bridge)
 ```bash
 sudo apt install ros-jazzy-ros-gz-image
 ```
-ros_gz_sim 
+ros_gz_sim (allows you to control and simulate robots within the Gazebo environment)
 ```bash
 sudo apt install ros-jazzy-ros-gz-sim
 ```
-nav2_commom 
+nav2_commom (contains essential components and common utilities for the robot navigation system in ROS 2)
 ```bash
 sudo apt install ros-jazzy-nav2-common
 ```
-Colcon
+Colcon (build tool used in ROS 2)
 ```bash
 sudo apt install python3-colcon-core python3-colcon-common-extensions
 ```
-ament_cmake
+ament_cmake (
+CMake build system extension used in ROS 2 to ease package development and building)
 ```bash
 sudo apt install ros-jazzy-ament-cmake  
 ```
