@@ -1,10 +1,10 @@
-This repository contains a simulation developed for the **Challenge for participation in the Mobile Robotics Research Project - VeRLab 2025.1**. The goal of the challenge was to create a simulation of the **Scout Mini**, a mobile robot from **AgileX**, equipped with either a **LiDAR sensor** or an **RGB camera**.  
+This repository contains a simulation developed for the **Challenge for participation in the Mobile Robotics Research Project - VeRLab 2025.1** 🤖. The goal of the challenge was to create a simulation of the **Scout Mini**, a mobile robot from **AgileX**, equipped with either a **LiDAR sensor** or an **RGB camera** 📷.
 
-In this implementation, both sensors were added to the Scout Mini. Additionally, a room with walls and a table was created to provide a better visualization of the sensors’ functionality in **RViz**.  
+In this implementation, both sensors were added to the Scout Mini 🔧. Additionally, a room with walls and a table was created 🏠 to simulate the VeRLab and provide a better visualization of the sensors’ functionality in **RViz** 🔍.
 
-To facilitate interaction with the simulation, the **teleop_twist_keyboard** was configured, allowing manual control of the robot.  
+To facilitate interaction with the simulation, the **teleop_twist_keyboard** was configured, allowing manual control of the robot 🎮.
 
-The package was developed to operate with **ROS 2 Jazzy**, using the **Gazebo Harmonic** simulator on **Ubuntu 24.04**. Below, you will find all the necessary instructions to run the simulation. 
+The package was developed to operate with **ROS 2 Jazzy**, using the **Gazebo Harmonic** simulator on **Ubuntu 24.04** 🖥️. Below, you will find all the necessary instructions to run the simulation ⬇️.
 
 ### Usage for the Scout Mini (ROS2 Jazzy + Ubuntu 24.04 + Gazebo Harmonic)
 The following steps assume you're using Ubuntu 24.04
@@ -83,6 +83,7 @@ sudo apt-get install gz-harmonic
 
 ### Aditional necessary packages
 To correctly build and run the simulation, you will need to install the following packages
+
 xacro
 ```bash
 sudo apt install ros-jazzy-xacro
