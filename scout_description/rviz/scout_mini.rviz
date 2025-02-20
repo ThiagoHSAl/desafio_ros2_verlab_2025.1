@@ -205,7 +205,7 @@ Visualization Manager:
       Max Intensity: 0
       Min Color: 0; 0; 0
       Min Intensity: 0
-      Name: Lidar 2D
+      Name: 2D Lidar
       Position Transformer: XYZ
       Selectable: true
       Size (Pixels): 3
@@ -239,7 +239,7 @@ Visualization Manager:
       Max Intensity: 0
       Min Color: 0; 0; 0
       Min Intensity: 0
-      Name: Lidar 3D
+      Name: 3D Lidar
       Position Transformer: XYZ
       Selectable: true
       Size (Pixels): 3
@@ -273,7 +273,7 @@ Visualization Manager:
       Max Intensity: 0
       Min Color: 0; 0; 0
       Min Intensity: 0
-      Name: RGBDcamera
+      Name: RGBD camera
       Position Transformer: XYZ
       Selectable: true
       Size (Pixels): 3

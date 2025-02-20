@@ -1,17 +1,15 @@
 This repository contains a simulation developed for the **Challenge for participation in the Mobile Robotics Research Project - VeRLab 2025.1** 🤖.  
-The goal of the challenge was to create a ROS Gazebo simulation of the **Scout Mini**, a mobile robot from **AgileX**, equipped with multiple with either a **LiDAR sensor** or an **RGB camera** 📷.
-
-
+The goal of the challenge was to create a ROS Gazebo simulation of the **Scout Mini**, a mobile robot from **AgileX**, equipped with either a **LiDAR sensor** or an **RGB camera** 📷.
 
 ### 🔧 Implementation  
 In this implementation, the **Scout Mini** is equipped with the following sensors:  
-- **LiDAR 2D** 📡  
-- **LiDAR 3D** 📡  
+- **2D LiDAR** 📡  
+- **3D LiDAR** 📡  
 - **Standard Camera** 📷  
 - **RGBD Camera** 🎥  
 
-By default, **RViz** is configured with the **LiDAR 2D** and the **Standard Camera** enabled.  
-To activate the **LiDAR 3D** and the **RGBD Camera**, simply check the corresponding sensor box in **RViz**.
+By default, **RViz** is configured with the **2D LiDAR** and the **Standard Camera** enabled.  
+To activate the **3D LiDAR** and the **RGBD Camera**, simply check the corresponding sensor box in **RViz**.
 Additionally, a room with walls and a table was created 🏠 to simulate the VeRLab and provide a better visualization of the sensors’ functionality in **RViz** 🔍.  
 This setup allows testing different perception modes for the robot, whether through depth data or color images combined with point clouds. 
 
@@ -20,7 +18,7 @@ To facilitate interaction with the simulation, the **teleop_twist_keyboard** was
 ### 🛠 Modularization with Xacro  
 To enhance flexibility and maintainability, the robot was modularized using **Xacro** files. The structure is divided as follows:  
 - **mech** → Contains the **chassis** and **wheels**  
-- **sensors** → Includes the **Standard Camera**, **RGBD Camera**, **LiDAR 2D**, and **LiDAR 3D**  
+- **sensors** → Includes the **Standard Camera**, **RGBD Camera**, **2D LiDAR**, and **3D LiDAR**  
 
 This modular approach makes it easier to insert, modify, and remove components, especially sensors, which can be worked on individually without affecting the rest of the model.  
 
