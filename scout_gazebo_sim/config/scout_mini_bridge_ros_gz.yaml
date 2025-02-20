@@ -5,26 +5,54 @@
   gz_type_name: "gz.msgs.Clock"
   direction: "GZ_TO_ROS"   
   
-# Laser scan (LiDAR)
+  # Laser scan (LiDAR)
 - ros_topic_name: "scout_mini/scan" 
   gz_topic_name: "scout_mini/scan"           
   ros_type_name: "sensor_msgs/msg/LaserScan"
   gz_type_name: "gz.msgs.LaserScan" 
+  direction: "GZ_TO_ROS"
+
+  # Laser scan (3DLiDAR)
+- ros_topic_name: "scout_mini/scan3d" 
+  gz_topic_name: "scout_mini/scan3d"           
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan" 
+  direction: "GZ_TO_ROS"
+
+# Laser scan (3D LiDAR)
+- ros_topic_name: "scout_mini/scan3d/points" 
+  gz_topic_name: "scout_mini/scan3d/points"           
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked" 
   direction: "GZ_TO_ROS" 
 
 # Camera info
-- ros_topic_name: "scout_mini/rgb_cam/camera_info"
-  gz_topic_name: "scout_mini/rgb_cam/camera_info"         
+- ros_topic_name: "scout_mini/camera/camera_info"
+  gz_topic_name: "scout_mini/camera/camera_info"         
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo" 
   direction: "GZ_TO_ROS"          
 
 # Camera image
-- ros_topic_name: "scout_mini/rgb_cam/image"
-  gz_topic_name: "scout_mini/rgb_cam/image"         
+- ros_topic_name: "scout_mini/camera/image"
+  gz_topic_name: "scout_mini/camera/image"         
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image" 
-  direction: "GZ_TO_ROS"    
+  direction: "GZ_TO_ROS" 
+
+# RGBD Camera image
+- ros_topic_name: "scout_mini/RGBcamera/depth_image"
+  gz_topic_name: "scout_mini/RGBcamera/depth_image"         
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image" 
+  direction: "GZ_TO_ROS"
+
+# RGBD Camera sensor
+- ros_topic_name: "scout_mini/RGBcamera/points" 
+  gz_topic_name: "scout_mini/RGBcamera/points"           
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked" 
+  direction: "GZ_TO_ROS"
 
 # Odom - diff drive
 - ros_topic_name: "scout_mini/odom"

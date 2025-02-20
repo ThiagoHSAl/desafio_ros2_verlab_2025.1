@@ -1,9 +1,30 @@
-This repository contains a simulation developed for the **Challenge for participation in the Mobile Robotics Research Project - VeRLab 2025.1** 🤖. The goal of the challenge was to create a ROS Gazebo simulation of the **Scout Mini**, a mobile robot from **AgileX**, equipped with either a **LiDAR sensor** or an **RGB camera** 📷.
+This repository contains a simulation developed for the **Challenge for participation in the Mobile Robotics Research Project - VeRLab 2025.1** 🤖.  
+The goal of the challenge was to create a ROS Gazebo simulation of the **Scout Mini**, a mobile robot from **AgileX**, equipped with multiple with either a **LiDAR sensor** or an **RGB camera** 📷.
 
-In this implementation, both sensors were added to the Scout Mini 🔧and both are configured to be connected and operating in Rivz after the simulation is launched
-. Additionally, a room with walls and a table was created 🏠 to simulate the VeRLab and provide a better visualization of the sensors’ functionality in **RViz** 🔍.
+
+
+### 🔧 Implementation  
+In this implementation, the **Scout Mini** is equipped with the following sensors:  
+- **LiDAR 2D** 📡  
+- **LiDAR 3D** 📡  
+- **Standard Camera** 📷  
+- **RGBD Camera** 🎥  
+
+By default, **RViz** is configured with the **LiDAR 2D** and the **Standard Camera** enabled.  
+To activate the **LiDAR 3D** and the **RGBD Camera**, simply check the corresponding sensor box in **RViz**.
+Additionally, a room with walls and a table was created 🏠 to simulate the VeRLab and provide a better visualization of the sensors’ functionality in **RViz** 🔍.  
+This setup allows testing different perception modes for the robot, whether through depth data or color images combined with point clouds. 
 
 To facilitate interaction with the simulation, the **teleop_twist_keyboard** was configured, allowing manual control of the robot 🎮.
+
+### 🛠 Modularization with Xacro  
+To enhance flexibility and maintainability, the robot was modularized using **Xacro** files. The structure is divided as follows:  
+- **mech** → Contains the **chassis** and **wheels**  
+- **sensors** → Includes the **Standard Camera**, **RGBD Camera**, **LiDAR 2D**, and **LiDAR 3D**  
+
+This modular approach makes it easier to insert, modify, and remove components, especially sensors, which can be worked on individually without affecting the rest of the model.  
+
+The project was developed with a strong focus on **organization, code cleanliness, and best programming practices**, ensuring a well-structured and easily maintainable simulation. ✅  
 
 The package was developed to operate with **ROS 2 Jazzy**, using the **Gazebo Harmonic** simulator on **Ubuntu 24.04** 🖥️. Below, you will find all the necessary instructions to run the simulation ⬇️.
 
@@ -135,7 +156,17 @@ Launch the simulation environment:
 ```bash
 ros2 launch scout_gazebo_sim scout_mini_empty_world.launch.py
 ```
-In another terminal launch the keyborad to move the robot:
+
+### Parameters of <i>scout_mini_empty_world.launch.py</i>:
+- <b>use_rviz</b>: if you want to launch rviz2 or not, default <i>true</i>.
+- <b>rviz_config_file</b>: name of the configuration file for RVIz2, defautl <i>scout_mini.rviz</i>.
+- <b>use_sim_time</b>: use simulation time or not, default <i>true</i>.
+- <b>x_pose</b>: x coordinate of the robot at the start, default <i>0.0</i>.
+- <b>x_pose</b>: x coordinate of the robot at the start, default <i>0.0</i>.
+- <b>yaw angle</b>: yaw angle of the robot at the start, default <i>3.14</i>.
+- <b>world_name</b>: name of the used world, the world must be in the world folder, default <i>empty.world</i>.
+
+In another terminal, launch the keyborad to move the robot:
 ```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
@@ -180,11 +211,3 @@ Hold down the **Shift** key to enter **Holonomic mode**, which allows strafing (
 #### **Exiting the Program**:
 - **CTRL-C**: Quit the program.
 
-### Parameters of <i>scout_mini_empty_world.launch.py</i>:
-- <b>use_rviz</b>: if you want to launch rviz2 or not, default <i>true</i>.
-- <b>rviz_config_file</b>: name of the configuration file for RVIz2, defautl <i>scout_mini.rviz</i>.
-- <b>use_sim_time</b>: use simulation time or not, default <i>true</i>.
-- <b>x_pose</b>: x coordinate of the robot at the start, default <i>0.0</i>.
-- <b>x_pose</b>: x coordinate of the robot at the start, default <i>0.0</i>.
-- <b>yaw angle</b>: yaw angle of the robot at the start, default <i>3.14</i>.
-- <b>world_name</b>: name of the used world, the world must be in the world folder, default <i>empty.world</i>.

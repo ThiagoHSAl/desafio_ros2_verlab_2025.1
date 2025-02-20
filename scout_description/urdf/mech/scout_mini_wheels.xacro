@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:macro name="scout_mini_wheels">
+        <link
+            name="front_right_wheel_link">
+            <inertial>
+                <mass value="3" />
+                <origin xyz="0 0 0" />
+                <inertia ixx="0.7171" ixy="0" ixz="0" iyy="0.7171" iyz="0" izz="0.1361" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://scout_description/meshes/wheel.dae" />
+                </geometry>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://scout_description/meshes/wheel.dae" />
+                </geometry>
+            </collision>
+        </link>
+
+        <joint
+            name="front_right_wheel" type="continuous">
+            <origin rpy="1.57 0 0" xyz="0.2319755 -0.2082515 -0.099998" />
+            <parent link="base_link" />
+            <child link="front_right_wheel_link" />
+            <axis xyz="0 0 -1" rpy="0 0 0" />
+        </joint>
+
+        <link name="front_left_wheel_link">
+            <inertial>
+                <mass value="3" />
+                <origin xyz="0 0 0" />
+                <inertia ixx="0.7171" ixy="0" ixz="0" iyy="0.7171" iyz="0" izz="0.1361" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://scout_description/meshes/wheel.dae" />
+                </geometry>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://scout_description/meshes/wheel.dae" />
+                </geometry>
+            </collision>
+        </link>
+
+        <joint
+            name="front_left_wheel" type="continuous">
+            <origin rpy="-1.57 0 0" xyz="0.2319755 0.2082515 -0.100998" />
+            <parent link="base_link" />
+            <child link="front_left_wheel_link" />
+            <axis xyz="0 0 1" rpy="0 0 0" />
+        </joint>
+
+        <link name="rear_right_wheel_link">
+            <inertial>
+                <mass value="3" />
+                <origin xyz="0 0 0" />
+                <inertia ixx="0.7171" ixy="0" ixz="0" iyy="0.7171" iyz="0" izz="0.1361" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://scout_description/meshes/wheel.dae" />
+                </geometry>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://scout_description/meshes/wheel.dae" />
+                </geometry>
+            </collision>
+        </link>
+
+        <joint
+            name="rear_right_wheel" type="continuous">
+            <origin rpy="1.57 0 0" xyz="-0.2319755 -0.2082515 -0.099998" />
+            <parent link="base_link" />
+            <child link="rear_right_wheel_link" />
+            <axis xyz="0 0 -1" rpy="0 0 0" />
+        </joint>
+
+        <link name="rear_left_wheel_link">
+            <inertial>
+                <mass value="3" />
+                <origin xyz="0 0 0" />
+                <inertia ixx="0.7171" ixy="0" ixz="0" iyy="0.7171" iyz="0" izz="0.1361" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://scout_description/meshes/wheel.dae" />
+                </geometry>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://scout_description/meshes/wheel.dae" />
+                </geometry>
+            </collision>
+        </link>
+
+        <joint
+            name="rear_left_wheel" type="continuous">
+            <origin rpy="-1.57 0 0" xyz="-0.2319755 0.2082515 -0.100998" />
+            <parent link="base_link" />
+            <child link="rear_left_wheel_link" />
+            <axis xyz="0 0 1" rpy="0 0 0" />
+        </joint>
+    </xacro:macro>
+</robot>

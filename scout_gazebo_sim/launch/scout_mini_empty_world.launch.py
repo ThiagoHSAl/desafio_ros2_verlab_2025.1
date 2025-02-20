@@ -135,7 +135,7 @@ def generate_launch_description():
     ros_gz_bridge_image_node = Node(
         package='ros_gz_image',
         executable='image_bridge',
-        arguments=['/scout_mini/rgb_cam/image'],
+        arguments=['/scout_mini/camera/image'],
     )
 
     ld = LaunchDescription()
