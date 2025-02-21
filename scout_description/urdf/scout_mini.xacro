@@ -16,33 +16,16 @@
 
     <!-- Sensors -->
     <!-- Lidar Sensor -->
-    <xacro:lidar
-    parent="base_link"
-    frame_id="laser_frame"
-    xyz_offset="0 0 0.0825"
-    rpy_offset="0 0 3.14"
-    mesh_xyz_offset="0 0 0"
-    mesh_rpy_offset="${-M_PI/2} 0 0"
-    topic_name="scout_mini/scan"/>
+    <xacro:lidar/>
 
     <!-- 3D Lidar Sensor -->
-    <xacro:lidar3d
-    parent="base_link"
-    frame_id="3dlaser_frame"
-    xyz_offset="0 0 0.0825"
-    rpy_offset="0 0 3.14"
-    mesh_xyz_offset="0 0 0"
-    mesh_rpy_offset="${-M_PI/2} 0 0"
-    topic_name="scout_mini/scan3d"/> 
+    <xacro:lidar3d/> 
 
     <!-- Camera -->
     <xacro:camera/>
 
     <!--RGBD Camera -->
-    <xacro:RGBcamera
-    camera_name="RGBcamera"
-    xyz_offset="0.26 0 0"
-    rpy_offset="0 0 0"/>
+    <xacro:RGBcamera/>
     
     <!-- Scout gazebo plugin -->
     <gazebo>
